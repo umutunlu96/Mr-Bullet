@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
         if (target.tag == "Ground")
         {
-            if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
+            if (GetComponent<Rigidbody2D>().velocity.magnitude > 3)
                 Death();
         }
 

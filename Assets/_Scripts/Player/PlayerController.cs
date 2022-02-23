@@ -7,13 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     public float rotateSpeed = 100, bullSpeed = 100;
     public int ammo = 4;
-    private Transform handPos;
-    private Transform firePos1, firePos2;
+
+    private Transform ballPos;
+    private GameObject ballSprite;
+    private Transform shootPos1, shootPos2;
     private LineRenderer lineRenderer;
     public GameObject bullet;
+    public GameObject Ball;
     private GameObject crossHair;
-    private GameObject ball;
-    private Transform shootPos;
 
     public AudioClip gunShot;
 
@@ -21,11 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         crossHair = GameObject.Find("CrossHair");
         crossHair.SetActive(false);
-        handPos = GameObject.Find("RightLeg").transform;
-        firePos1 = GameObject.Find("FirePos1").transform;
-        firePos2 = GameObject.Find("FirePos2").transform;
-        shootPos = GameObject.Find("ShootPos").transform;
-        ball = GameObject.Find("ball");
+
+        ballPos = GameObject.Find("BallPos").transform;
+        ballSprite = GameObject.Find("BallSprite");
+        shootPos1 = GameObject.Find("ShootPos1").transform;
+        shootPos2 = GameObject.Find("ShootPos2").transform;
+
         lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
     }
@@ -41,15 +43,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Aim();
+                ballSprite.SetActive(true);
             }
 
             if (Input.GetMouseButtonUp(0))
             {
                 if (ammo > 0)
                 {
-                    handPos.gameObject.GetComponent<Animator>().SetTrigger("Shoot");
                     Shoot();
+                    ballSprite.SetActive(false);
                 }
+
                 else
                 {
                     lineRenderer.enabled = false;
@@ -61,14 +65,14 @@ public class PlayerController : MonoBehaviour
 
     void Aim()
     {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - handPos.position;
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - ballPos.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        handPos.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
+        ballPos.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
 
         lineRenderer.enabled = true;
-        lineRenderer.SetPosition(0, firePos1.position);
-        lineRenderer.SetPosition(1, firePos2.position);
+        lineRenderer.SetPosition(0, shootPos1.position);
+        lineRenderer.SetPosition(1, shootPos2.position);
         
         crossHair.SetActive(true);
         crossHair.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
@@ -80,41 +84,22 @@ public class PlayerController : MonoBehaviour
         lineRenderer.enabled = false;
         crossHair.SetActive(false);
 
-        //GameObject bullet = Instantiate(this.bullet, firePos1.position, Quaternion.identity);
+        GameObject Ball = Instantiate(this.Ball, shootPos1.position, Quaternion.identity);
 
         if (transform.localScale.x > 0)
-            ball.GetComponent<Rigidbody2D>().AddForce(shootPos.right * bullSpeed, ForceMode2D.Impulse);
+            Ball.GetComponent<Rigidbody2D>().AddForce(shootPos1.right * bullSpeed, ForceMode2D.Impulse);
         else
-            ball.GetComponent<Rigidbody2D>().AddForce(-shootPos.right * bullSpeed, ForceMode2D.Impulse);
+            Ball.GetComponent<Rigidbody2D>().AddForce(-shootPos1.right * bullSpeed, ForceMode2D.Impulse);
 
         ammo--;
 
         FindObjectOfType<GameManager>().CheckBullets();
 
-        //SoundManager.instance.PlaySoundFX(gunShot,.3f);
-
-        //Destroy(bullet,2);
+        Destroy(Ball, 2);
     }
 
     bool IsMouseOnUI()
     {
         return EventSystem.current.IsPointerOverGameObject();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
