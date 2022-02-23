@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private LineRenderer lineRenderer;
     public GameObject bullet;
     private GameObject crossHair;
+    private GameObject ball;
+    private Transform shootPos;
 
     public AudioClip gunShot;
 
@@ -19,15 +21,17 @@ public class PlayerController : MonoBehaviour
     {
         crossHair = GameObject.Find("CrossHair");
         crossHair.SetActive(false);
-        handPos = GameObject.Find("LeftArm").transform;
+        handPos = GameObject.Find("RightLeg").transform;
         firePos1 = GameObject.Find("FirePos1").transform;
         firePos2 = GameObject.Find("FirePos2").transform;
+        shootPos = GameObject.Find("ShootPos").transform;
+        ball = GameObject.Find("ball");
         lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
     }
     private void Start()
     {
-        //start
+        
     }
 
     void Update()
@@ -42,7 +46,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 if (ammo > 0)
+                {
+                    handPos.gameObject.GetComponent<Animator>().SetTrigger("Shoot");
                     Shoot();
+                }
                 else
                 {
                     lineRenderer.enabled = false;
@@ -73,24 +80,41 @@ public class PlayerController : MonoBehaviour
         lineRenderer.enabled = false;
         crossHair.SetActive(false);
 
-        GameObject bullet = Instantiate(this.bullet, firePos1.position, Quaternion.identity);
+        //GameObject bullet = Instantiate(this.bullet, firePos1.position, Quaternion.identity);
 
         if (transform.localScale.x > 0)
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePos1.right * bullSpeed, ForceMode2D.Impulse);
+            ball.GetComponent<Rigidbody2D>().AddForce(shootPos.right * bullSpeed, ForceMode2D.Impulse);
         else
-            bullet.GetComponent<Rigidbody2D>().AddForce(-firePos1.right * bullSpeed, ForceMode2D.Impulse);
+            ball.GetComponent<Rigidbody2D>().AddForce(-shootPos.right * bullSpeed, ForceMode2D.Impulse);
 
         ammo--;
 
         FindObjectOfType<GameManager>().CheckBullets();
 
-        SoundManager.instance.PlaySoundFX(gunShot,.3f);
+        //SoundManager.instance.PlaySoundFX(gunShot,.3f);
 
-        Destroy(bullet,2);
+        //Destroy(bullet,2);
     }
 
     bool IsMouseOnUI()
     {
         return EventSystem.current.IsPointerOverGameObject();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
