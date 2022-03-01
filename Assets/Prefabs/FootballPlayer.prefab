@@ -297,9 +297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 100
-  bullSpeed: 20
+  bullSpeed: 15
   ammo: 4
   bullet: {fileID: 6469480704339162771, guid: b561cfd1eb2432a4cb82b140952f28d5, type: 3}
+  Ball: {fileID: 0}
   gunShot: {fileID: 8300000, guid: fb395cbbe950b004289a316ff9368635, type: 3}
 --- !u!1 &2606986849425094832
 GameObject:
