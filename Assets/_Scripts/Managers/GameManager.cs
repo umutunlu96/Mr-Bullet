@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Fade animler kapatildi.
+
+
 public class GameManager : MonoBehaviour
 {
     public int enemyCount = 1;
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         levelNumber = PlayerPrefs.GetInt("Level",1);
 
-        fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
+        //fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
         FindObjectOfType<PlayerController>().ammo = blackBullets + goldenBullets;
 
@@ -85,19 +88,19 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void NextLevel()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void Exit()
     {
-        //SceneManager.LoadScene("MainMenu");
-        StartCoroutine(FadeIn(0));
+        SceneManager.LoadScene("MainMenu");
+        //StartCoroutine(FadeIn(0));
     }
 }
