@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCount: 1
   gameOver: 0
-  blackBullets: 3
-  goldenBullets: 1
-  blackBullet: {fileID: 8618351826901709209, guid: 170dad903a1d79346acd809f8a9047ec, type: 3}
-  goldenBullet: {fileID: 4753923703466332695, guid: 5098ce256497ffd45bfc6dbb5d3d2e67, type: 3}
+  isGoal: 0
+  blackBalls: 3
+  goldenBalls: 1
+  blackBall: {fileID: 8618351826901709209, guid: 170dad903a1d79346acd809f8a9047ec, type: 3}
+  goldenBall: {fileID: 4753923703466332695, guid: 5098ce256497ffd45bfc6dbb5d3d2e67, type: 3}

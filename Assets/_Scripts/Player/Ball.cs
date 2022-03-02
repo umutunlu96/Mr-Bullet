@@ -8,8 +8,6 @@ public class Ball : MonoBehaviour
 
     private GameManager gameManager;
 
-    public bool isGoal;
-
     private void Awake()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -20,8 +18,7 @@ public class Ball : MonoBehaviour
         if (target.tag == "Goal")
         {
             GetComponent<CircleCollider2D>().sharedMaterial = null;
-            gameManager.gameOver = true;
-            isGoal = true;
+            gameManager.isGoal = true;
         }
     }
 

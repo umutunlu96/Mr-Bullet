@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 1;
 
     [HideInInspector]
-    public bool gameOver;
+    public bool gameOver, isGoal;
+
     public int blackBalls = 3;
     public int goldenBalls = 1;
 
@@ -46,7 +47,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!gameOver && FindObjectOfType<Ball>().isGoal)
+        if (!gameOver && isGoal)
+        {
+            GameUI.instance.WinScreen();
+            if (levelNumber >= SceneManager.GetActiveScene().buildIndex)
+            {
+                PlayerPrefs.SetInt("Level", levelNumber + 1);
+            }
+
+            gameOver = true;
+        }
+
+        if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0)
         {
             gameOver = true;
             GameUI.instance.GameOverScreen();
