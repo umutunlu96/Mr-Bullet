@@ -28,7 +28,7 @@ public class GameUI : MonoBehaviour
 
     void Start()
     {
-        startBB = gameManager.blackBullets;
+        startBB = gameManager.blackBalls;
     }
 
     public void GameOverScreen()
@@ -40,17 +40,17 @@ public class GameUI : MonoBehaviour
     {
         winPanel.SetActive(true);
 
-        if (gameManager.blackBullets >= startBB)
+        if (gameManager.blackBalls >= startBB)
         {
             goodJobText.text = "FANTASTIC!";
             StartCoroutine(Stars(3));
         }
-        else if (gameManager.blackBullets >= startBB - (gameManager.blackBullets / 2))
+        else if (gameManager.blackBalls >= startBB - (gameManager.blackBalls / 2))
         {
             goodJobText.text = "AWESOME!";
             StartCoroutine(Stars(2));
         }
-        else if (gameManager.blackBullets > 0)
+        else if (gameManager.blackBalls > 0)
         {
             goodJobText.text = "WELL DONE!";
             StartCoroutine(Stars(1));

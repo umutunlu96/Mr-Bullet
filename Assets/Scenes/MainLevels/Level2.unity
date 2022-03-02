@@ -765,7 +765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &587732260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -908,9 +908,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 738390286999167901, guid: 0f6826101dbae82488679f916d847367, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 856186424625340590, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_Name
       value: SoccrGoal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774589064697319979, guid: 0f6826101dbae82488679f916d847367, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082443723142860078, guid: 0f6826101dbae82488679f916d847367, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6826101dbae82488679f916d847367, type: 3}
@@ -1739,10 +1751,6 @@ PrefabInstance:
     - target: {fileID: 4706914140408741101, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_Name
       value: GameUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706914140408741101, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4706914140640334813, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         ammo--;
 
-        FindObjectOfType<GameManager>().CheckBullets();
+        FindObjectOfType<GameManager>().CheckBalls();
 
         Destroy(Ball, 2);
     }

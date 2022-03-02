@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - BodyPart
   - Goal
+  - GoalPost
   layers:
   - Default
   - TransparentFX
