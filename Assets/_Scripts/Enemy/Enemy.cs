@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direction = transform.position - target.transform.position;
 
-        if (target.tag == "Bullet")
+        if (target.tag == "Shirken")
         {
 
             if(transform.GetChild(0).GetComponent<Rigidbody2D>().gravityScale <1)

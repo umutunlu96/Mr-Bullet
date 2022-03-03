@@ -4,16 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - Box
   - BoxPlank
   - Plank
   - Tnt
   - Enemy
-  - GoldenBullet
-  - BlackBullet
   - Ground
   - BodyPart
+  - GoldenShirken
+  - BlackShirken
+  - Shirken
   layers:
   - Default
   - TransparentFX
@@ -24,7 +24,7 @@ TagManager:
   - 
   - BulletProof
   - BodyParts
-  - Bullet
+  - Shirken
   - 
   - 
   - 

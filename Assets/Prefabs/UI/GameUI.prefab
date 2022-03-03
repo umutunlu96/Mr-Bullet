@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 4706914140191406435}
   - component: {fileID: 4706914140191406434}
   m_Layer: 5
-  m_Name: Bullets
+  m_Name: Shirkens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

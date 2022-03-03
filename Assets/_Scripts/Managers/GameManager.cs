@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 1;
     [HideInInspector]
     public bool gameOver;
-    public int blackBullets = 3;
-    public int goldenBullets = 1;
+    public int blackShirkens = 3;
+    public int goldenShirkens = 1;
 
-    public GameObject blackBullet, goldenBullet;
+    public GameObject blackShirken, goldenShirken;
 
     private int levelNumber;
 
@@ -26,18 +26,20 @@ public class GameManager : MonoBehaviour
 
         //fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
-        FindObjectOfType<PlayerController>().ammo = blackBullets + goldenBullets;
+        FindObjectOfType<PlayerController>().ammo = blackShirkens + goldenShirkens;
 
-        for (int i = 0; i < blackBullets; i++)
+        for (int i = 0; i < blackShirkens; i++)
         {
-            GameObject bbTemp = Instantiate(blackBullet);
-            bbTemp.transform.SetParent(GameObject.Find("Bullets").transform);
+            GameObject blackShirken = Instantiate(this.blackShirken);
+            blackShirken.transform.SetParent(GameObject.Find("Shirkens").transform);
+            blackShirken.transform.rotation = Quaternion.Euler(0,0,-30);
         }
 
-        for (int i = 0; i < goldenBullets; i++)
+        for (int i = 0; i < goldenShirkens; i++)
         {
-            GameObject gbTemp = Instantiate(goldenBullet);
-            gbTemp.transform.SetParent(GameObject.Find("Bullets").transform);
+            GameObject goldenShirken = Instantiate(this.goldenShirken);
+            goldenShirken.transform.SetParent(GameObject.Find("Shirkens").transform);
+            goldenShirken.transform.rotation = Quaternion.Euler(0, 0, -30);
         }
 
     }
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0 && enemyCount > 0 && 
-            GameObject.FindGameObjectsWithTag("Bullet").Length <= 0)
+            GameObject.FindGameObjectsWithTag("Shirken").Length <= 0)
         {
             gameOver = true;
             GameUI.instance.GameOverScreen();
@@ -54,15 +56,15 @@ public class GameManager : MonoBehaviour
 
     public void CheckBullets()
     {
-        if (goldenBullets > 0)
+        if (goldenShirkens > 0)
         {
-            goldenBullets--;
-            GameObject.FindGameObjectWithTag("GoldenBullet").SetActive(false);
+            goldenShirkens--;
+            GameObject.FindGameObjectWithTag("GoldenShirken").SetActive(false);
         }
-        else if (blackBullets > 0)
+        else if (blackShirkens > 0)
         {
-            blackBullets--;
-            GameObject.FindGameObjectWithTag("BlackBullet").SetActive(false);
+            blackShirkens--;
+            GameObject.FindGameObjectWithTag("BlackShirken").SetActive(false);
         }
     }
 

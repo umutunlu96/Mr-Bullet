@@ -10,19 +10,23 @@ public class PlayerController : MonoBehaviour
     private Transform handPos;
     private Transform firePos1, firePos2;
     private LineRenderer lineRenderer;
-    public GameObject bullet;
-    private GameObject crossHair;
+    public GameObject shirken;
+    //private GameObject crossHair;
 
-    public AudioClip gunShot;
+    [SerializeField]
+    private float shirkenLifeTime = 2;
+
+    private Animator animator;
+    public AudioClip throwSound;
 
     void Awake()
     {
-        crossHair = GameObject.Find("CrossHair");
-        crossHair.SetActive(false);
-        handPos = GameObject.Find("LeftArm").transform;
+        //crossHair = GameObject.Find("CrossHair");
+        //crossHair.SetActive(false);
+        handPos = GameObject.Find("RightArm").transform;
         firePos1 = GameObject.Find("FirePos1").transform;
         firePos2 = GameObject.Find("FirePos2").transform;
-        lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
+        lineRenderer = GameObject.Find("Shiriken").GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
     }
     private void Start()
@@ -46,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     lineRenderer.enabled = false;
-                    crossHair.SetActive(false);
+                    //crossHair.SetActive(false);
                 }
             }
         }
@@ -63,30 +67,30 @@ public class PlayerController : MonoBehaviour
         lineRenderer.SetPosition(0, firePos1.position);
         lineRenderer.SetPosition(1, firePos2.position);
         
-        crossHair.SetActive(true);
-        crossHair.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
+        //crossHair.SetActive(true);
+        //crossHair.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
     }
 
 
     void Shoot()
     {
         lineRenderer.enabled = false;
-        crossHair.SetActive(false);
+        //crossHair.SetActive(false);
 
-        GameObject bullet = Instantiate(this.bullet, firePos1.position, Quaternion.identity);
+        GameObject shirken = Instantiate(this.shirken, firePos1.position, Quaternion.identity);
 
         if (transform.localScale.x > 0)
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePos1.right * bullSpeed, ForceMode2D.Impulse);
+            shirken.GetComponent<Rigidbody2D>().AddForce(firePos1.right * bullSpeed, ForceMode2D.Impulse);
         else
-            bullet.GetComponent<Rigidbody2D>().AddForce(-firePos1.right * bullSpeed, ForceMode2D.Impulse);
+            shirken.GetComponent<Rigidbody2D>().AddForce(-firePos1.right * bullSpeed, ForceMode2D.Impulse);
 
         ammo--;
 
         FindObjectOfType<GameManager>().CheckBullets();
 
-        SoundManager.instance.PlaySoundFX(gunShot,.3f);
+        SoundManager.instance.PlaySoundFX(throwSound, .3f);
 
-        Destroy(bullet,2);
+        Destroy(shirken, shirkenLifeTime);
     }
 
     bool IsMouseOnUI()

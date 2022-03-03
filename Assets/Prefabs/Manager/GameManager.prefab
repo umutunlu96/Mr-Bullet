@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCount: 1
   gameOver: 0
-  blackBullets: 3
-  goldenBullets: 1
-  blackBullet: {fileID: 8618351826901709209, guid: 170dad903a1d79346acd809f8a9047ec, type: 3}
-  goldenBullet: {fileID: 4753923703466332695, guid: 5098ce256497ffd45bfc6dbb5d3d2e67, type: 3}
+  blackShirkens: 3
+  goldenShirkens: 1
+  blackShirken: {fileID: 1187257114616737339, guid: 3e29a4bff11d71d46a004cba73800345, type: 3}
+  goldenShirken: {fileID: 6066039445279927637, guid: eca928820b5c37e40bc3e46ef4248250, type: 3}
