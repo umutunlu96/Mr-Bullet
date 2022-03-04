@@ -3203,8 +3203,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: a5d89b69f5e0cf642be7d0dbba3cb4a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606986849341439091, guid: a5d89b69f5e0cf642be7d0dbba3cb4a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: a5d89b69f5e0cf642be7d0dbba3cb4a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3441,7 +3445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706914140408741101, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706914140640334813, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3470,7 +3474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.31
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.y

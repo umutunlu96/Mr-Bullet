@@ -4,18 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
-  - Box
-  - BoxPlank
-  - Plank
-  - Tnt
-  - Enemy
-  - GoldenBullet
-  - BlackBullet
   - Ground
-  - BodyPart
-  - Goal
-  - GoalPost
+  - GoldenBall
+  - BlackBall
+  - Ball
+  - BackKale
+  - Kale
   layers:
   - Default
   - TransparentFX

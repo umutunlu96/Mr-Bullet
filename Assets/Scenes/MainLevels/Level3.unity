@@ -191,11 +191,6 @@ Transform:
   m_Father: {fileID: 2052169502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &279802842 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
-  m_PrefabInstance: {fileID: 476473807091553021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297196837
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +224,6 @@ Transform:
   - {fileID: 36718581}
   - {fileID: 1731686005}
   - {fileID: 1746725020}
-  - {fileID: 279802842}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1025,7 +1019,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 297196838}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_RootOrder
@@ -1073,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856186424625340590, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_Name
-      value: SoccrGoal
+      value: Kale
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6826101dbae82488679f916d847367, type: 3}

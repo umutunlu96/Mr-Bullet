@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
-    public float rotateSpeed = 100, bullSpeed = 100;
+    public float rotateSpeed = 100, ballSpeed = 15;
     public int ammo = 4;
+    public float ballLifeTime = 1.5f;
+    private float distanceX;
 
     private Transform ballPos;
     private GameObject ballSprite;
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        
+        distanceX = ballPos.position.x - transform.position.x;
     }
 
     void Update()
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         ballPos.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
-
+        RotatePlayer(direction);
         lineRenderer.enabled = true;
         lineRenderer.SetPosition(0, shootPos1.position);
         lineRenderer.SetPosition(1, shootPos2.position);
@@ -78,6 +80,40 @@ public class PlayerController : MonoBehaviour
         crossHair.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
     }
 
+    void RotatePlayer(Vector2 dir)
+    {
+        if (dir.x >= 0 && transform.localScale.x == -1 && distanceX > 0)
+        {
+            print("Sag");
+            transform.localScale = new Vector3(1, 1, 1);
+            ballPos.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
+        }
+
+        else if (dir.x < 0 && transform.localScale.x == 1 && distanceX > 0)
+        {
+            print("Sol");
+            transform.localScale = new Vector3(-1, 1, 1);
+            ballPos.localScale = new Vector3(-1, 1, 1);
+            transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
+        }
+
+        else if (dir.x >= 0 && transform.localScale.x == -1 && distanceX < 0)
+        {
+            print("Sag");
+            transform.localScale = new Vector3(1, 1, 1);
+            ballPos.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
+        }
+
+        else if (dir.x < 0 && transform.localScale.x == 1 && distanceX < 0)
+        {
+            print("Sol");
+            transform.localScale = new Vector3(-1, 1, 1);
+            ballPos.localScale = new Vector3(-1, 1, 1);
+            transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
+        }
+    }
 
     void Shoot()
     {
@@ -87,15 +123,15 @@ public class PlayerController : MonoBehaviour
         GameObject Ball = Instantiate(this.Ball, shootPos1.position, Quaternion.identity);
 
         if (transform.localScale.x > 0)
-            Ball.GetComponent<Rigidbody2D>().AddForce(shootPos1.right * bullSpeed, ForceMode2D.Impulse);
+            Ball.GetComponent<Rigidbody2D>().AddForce(shootPos1.right * ballSpeed, ForceMode2D.Impulse);
         else
-            Ball.GetComponent<Rigidbody2D>().AddForce(-shootPos1.right * bullSpeed, ForceMode2D.Impulse);
+            Ball.GetComponent<Rigidbody2D>().AddForce(-shootPos1.right * ballSpeed, ForceMode2D.Impulse);
 
         ammo--;
 
         FindObjectOfType<GameManager>().CheckBalls();
 
-        Destroy(Ball, 2);
+        Destroy(Ball, ballLifeTime);
     }
 
     bool IsMouseOnUI()

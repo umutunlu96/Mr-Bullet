@@ -8,10 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int enemyCount = 1;
+    public int kaleCount = 1;
 
     [HideInInspector]
-    public bool gameOver, isGoal;
+    public bool gameOver, gameWin;
 
     public int blackBalls = 3;
     public int goldenBalls = 1;
@@ -34,43 +34,35 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < blackBalls; i++)
         {
             GameObject bbTemp = Instantiate(blackBall);
-            bbTemp.transform.SetParent(GameObject.Find("Bullets").transform);
+            bbTemp.transform.SetParent(GameObject.Find("Balls").transform);
         }
 
         for (int i = 0; i < goldenBalls; i++)
         {
             GameObject gbTemp = Instantiate(goldenBall);
-            gbTemp.transform.SetParent(GameObject.Find("Bullets").transform);
+            gbTemp.transform.SetParent(GameObject.Find("Balls").transform);
         }
 
     }
 
     void Update()
     {
-        if (!gameOver && isGoal)
+        if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0 && kaleCount > 0
+            && GameObject.FindGameObjectsWithTag("Ball").Length <= 0)
+        {
+            gameOver = true;
+            GameUI.instance.GameOverScreen();
+        }
+
+        if (gameWin && GameObject.FindGameObjectsWithTag("Ball").Length <= 0)
         {
             GameUI.instance.WinScreen();
             if (levelNumber >= SceneManager.GetActiveScene().buildIndex)
             {
                 PlayerPrefs.SetInt("Level", levelNumber + 1);
             }
-
-            gameOver = true;
         }
 
-        if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0)
-        {
-            gameOver = true;
-            GameUI.instance.GameOverScreen();
-        }
-
-
-        //if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0 && enemyCount > 0 && 
-        //    GameObject.FindGameObjectsWithTag("Bullet").Length <= 0)
-        //{
-        //    gameOver = true;
-        //    GameUI.instance.GameOverScreen();
-        //}
     }
 
     public void CheckBalls()
@@ -78,27 +70,27 @@ public class GameManager : MonoBehaviour
         if (goldenBalls > 0)
         {
             goldenBalls--;
-            GameObject.FindGameObjectWithTag("GoldenBullet").SetActive(false);
+            GameObject.FindGameObjectWithTag("GoldenBall").SetActive(false);
         }
         else if (blackBalls > 0)
         {
             blackBalls--;
-            GameObject.FindGameObjectWithTag("BlackBullet").SetActive(false);
+            GameObject.FindGameObjectWithTag("BlackBall").SetActive(false);
         }
     }
 
-    public void CheckEnemyCount()
+    public void CheckKaleCount()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (enemyCount <= 0)
+        kaleCount = GameObject.FindGameObjectsWithTag("Kale").Length;
+
+        if (kaleCount <= 0)
         {
-            GameUI.instance.WinScreen();
-            if (levelNumber >= SceneManager.GetActiveScene().buildIndex)
-            {
-                PlayerPrefs.SetInt("Level",levelNumber + 1);
-            }
+            gameWin = true;
         }
     }
+
+
+
 
     //IEnumerator FadeIn(int sceneIndex)
     //{
