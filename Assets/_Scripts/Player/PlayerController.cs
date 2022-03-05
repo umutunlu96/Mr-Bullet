@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Transform firePos1, firePos2;
     private LineRenderer lineRenderer;
     public GameObject shirken;
+    private GameObject handShirken;
     //private GameObject crossHair;
 
     [SerializeField]
@@ -26,20 +27,25 @@ public class PlayerController : MonoBehaviour
         handPos = GameObject.Find("RightArm").transform;
         firePos1 = GameObject.Find("FirePos1").transform;
         firePos2 = GameObject.Find("FirePos2").transform;
+        handShirken = GameObject.Find("Shiriken");
         lineRenderer = GameObject.Find("Shiriken").GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
     }
     private void Start()
     {
-        //start
+
     }
 
     void Update()
     {
         if (!IsMouseOnUI())
         {
+            ShowHandShirken();
+
             if (Input.GetMouseButton(0))
             {
+                RotateNinja();
+
                 Aim();
             }
 
@@ -56,6 +62,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    void ShowHandShirken()
+    {
+        if (Input.GetMouseButtonDown(0) && !handShirken.GetComponent<SpriteRenderer>().enabled)
+        {
+            handShirken.GetComponent<SpriteRenderer>().enabled = true;
+        }
+
+        else if (Input.GetMouseButtonUp(0) && handShirken.GetComponent<SpriteRenderer>().enabled)
+        {
+            handShirken.GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+
+
     void Aim()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - handPos.position;
@@ -66,11 +87,26 @@ public class PlayerController : MonoBehaviour
         lineRenderer.enabled = true;
         lineRenderer.SetPosition(0, firePos1.position);
         lineRenderer.SetPosition(1, firePos2.position);
-        
+
         //crossHair.SetActive(true);
         //crossHair.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
     }
 
+    void RotateNinja()
+    {
+        float direction = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+
+        if (direction >= 0)
+        {
+            print("Right");
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (direction < 0)
+        {
+            print("Left");
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
 
     void Shoot()
     {
