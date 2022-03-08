@@ -332,7 +332,7 @@ MonoBehaviour:
   ballLifeTime: 2.5
   bullet: {fileID: 6469480704339162771, guid: b561cfd1eb2432a4cb82b140952f28d5, type: 3}
   Ball: {fileID: 3190940812504124847, guid: 34bc8906821432743927baad082427bd, type: 3}
-  gunShot: {fileID: 8300000, guid: fb395cbbe950b004289a316ff9368635, type: 3}
+  gunShot: {fileID: 8300000, guid: 3ddab5463d69e6c4ea78ca74fdc2b48a, type: 3}
 --- !u!1 &2606986849425094832
 GameObject:
   m_ObjectHideFlags: 0
