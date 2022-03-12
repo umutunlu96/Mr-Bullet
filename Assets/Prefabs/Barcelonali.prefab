@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2606986849341439091}
   - component: {fileID: 2606986849341439088}
+  - component: {fileID: 7417724604580336449}
   m_Layer: 0
   m_Name: Barcelonali
   m_TagString: Untagged
@@ -330,9 +331,27 @@ MonoBehaviour:
   ballSpeed: 13
   ammo: 4
   ballLifeTime: 2.5
-  bullet: {fileID: 6469480704339162771, guid: b561cfd1eb2432a4cb82b140952f28d5, type: 3}
   Ball: {fileID: 3190940812504124847, guid: 34bc8906821432743927baad082427bd, type: 3}
-  gunShot: {fileID: 8300000, guid: 9262a435f9b9d9841851e6e8b23f3520, type: 3}
+  ballShootAudio: {fileID: 8300000, guid: 9262a435f9b9d9841851e6e8b23f3520, type: 3}
+--- !u!95 &7417724604580336449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606986849341439090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40a4e4630704e2b4c82f2d161533fcd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2606986849425094832
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +474,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2606986849591708691}
   - component: {fileID: 2606986849591708688}
-  - component: {fileID: 2052169504}
   m_Layer: 0
   m_Name: RightLeg
   m_TagString: Untagged
@@ -529,25 +547,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2052169504
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2606986849591708690}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4511957d374f6145b4c2012f90a0147, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2606986849690723325
 GameObject:
   m_ObjectHideFlags: 0

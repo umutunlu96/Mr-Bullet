@@ -242,4 +242,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f18c8c4ba8ea6149aa9533db1786312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxHit: {fileID: 8300000, guid: 6eb562b22e52c26419071e985f1c1078, type: 3}
+  boxHit: {fileID: 8300000, guid: f25ab0f36aa815848a03dcb6c814e163, type: 3}
+  groundHit: {fileID: 8300000, guid: f25ab0f36aa815848a03dcb6c814e163, type: 3}

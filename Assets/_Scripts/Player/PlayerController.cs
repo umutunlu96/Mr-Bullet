@@ -14,19 +14,18 @@ public class PlayerController : MonoBehaviour
     private GameObject ballSprite;
     private Transform shootPos1, shootPos2;
     private LineRenderer lineRenderer;
-    public GameObject bullet;
+
     public GameObject Ball;
     private GameObject crossHair;
 
-    public AudioClip gunShot;
+    public AudioClip ballShootAudio;
 
-    //private Animator kickballAnim;
+    private Animator animator;
 
 
 
     void Awake()
     {
-        //kickballAnim = GameObject.Find("RightLeg").GetComponent<Animator>();
         crossHair = GameObject.Find("CrossHair");
         crossHair.SetActive(false);
 
@@ -37,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
         lineRenderer = GameObject.Find("Gun").GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+
+        animator = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -123,7 +124,7 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         
-        SoundManager.instance.PlaySoundFX(gunShot, .1f);
+        SoundManager.instance.PlaySoundFX(ballShootAudio, .1f);
 
         lineRenderer.enabled = false;
         crossHair.SetActive(false);
@@ -138,6 +139,8 @@ public class PlayerController : MonoBehaviour
         ammo--;
 
         FindObjectOfType<GameManager>().CheckBalls();
+
+        animator.SetTrigger("Shoot");
 
         Destroy(Ball, ballLifeTime);
     }

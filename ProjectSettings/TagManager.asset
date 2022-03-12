@@ -10,7 +10,8 @@ TagManager:
   - Ball
   - BackKale
   - Kale
-  - BrownGround
+  - Enemy
+  - BodyPart
   layers:
   - Default
   - TransparentFX

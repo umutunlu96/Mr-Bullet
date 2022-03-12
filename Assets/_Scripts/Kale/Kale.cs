@@ -18,7 +18,7 @@ public class Kale : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == "Ball")
+        if (target.tag == "Ball" && gameObject.tag != "Untagged")
         {
             Death();
         }
