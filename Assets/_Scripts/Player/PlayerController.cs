@@ -20,8 +20,13 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip gunShot;
 
+    //private Animator kickballAnim;
+
+
+
     void Awake()
     {
+        //kickballAnim = GameObject.Find("RightLeg").GetComponent<Animator>();
         crossHair = GameObject.Find("CrossHair");
         crossHair.SetActive(false);
 
@@ -117,6 +122,9 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
+        
+        SoundManager.instance.PlaySoundFX(gunShot, .1f);
+
         lineRenderer.enabled = false;
         crossHair.SetActive(false);
 

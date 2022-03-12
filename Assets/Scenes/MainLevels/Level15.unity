@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 85941067}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (6)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 143675785}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (1)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 569083284}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (2)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 689501293}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (9)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1391150402}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (7)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 1702007064}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (3)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1821,7 +1821,7 @@ GameObject:
   - component: {fileID: 1897081525}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (8)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1839,7 +1839,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3078724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1850,7 +1850,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7266667, y: 2.7333333}
+  m_Size: {x: 2.7266667, y: 3.3490784}
   m_EdgeRadius: 0
 --- !u!212 &1897081526
 SpriteRenderer:
@@ -2015,7 +2015,7 @@ GameObject:
   - component: {fileID: 2095891395}
   m_Layer: 0
   m_Name: TOPREKmdpi 150 (5)
-  m_TagString: Untagged
+  m_TagString: BrownGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - BackKale
   - Kale
+  - BrownGround
   layers:
   - Default
   - TransparentFX
