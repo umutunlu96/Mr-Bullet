@@ -219,7 +219,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.1336361, y: 0.1941665}
+  m_ConnectedAnchor: {x: -0.1336361, y: 0.19416669}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -347,8 +347,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0050120354, y: -0.12697631}
-  m_Size: {x: 0.14507294, y: 0.2819755}
+  m_Offset: {x: -0.0050120386, y: -0.111944124}
+  m_Size: {x: 0.145073, y: 0.25191137}
   m_Direction: 0
 --- !u!233 &4144343482547268032
 HingeJoint2D:
@@ -365,7 +365,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.09181814, y: -0.17749985}
+  m_ConnectedAnchor: {x: -0.09181814, y: -0.17750004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -512,7 +512,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.13545458, y: 0.18916646}
+  m_ConnectedAnchor: {x: 0.13545458, y: 0.18916665}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -950,7 +950,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.07582583, y: -0.28666693}
+  m_ConnectedAnchor: {x: -0.07582595, y: -0.28666714}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1034,8 +1034,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030365229, y: -0.36183715}
-  m_Size: {x: 0.53529024, y: 1.2159228}
+  m_Offset: {x: 0.030365229, y: -0.3207605}
+  m_Size: {x: 0.53529024, y: 1.1337695}
   m_Direction: 0
 --- !u!255 &4144343483855612494
 FixedJoint2D:
@@ -1187,8 +1187,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025186062, y: -0.11543289}
-  m_Size: {x: 0.13646507, y: 0.2746026}
+  m_Offset: {x: 0.025186062, y: -0.10644872}
+  m_Size: {x: 0.13646512, y: 0.25659284}
   m_Direction: 0
 --- !u!233 &4144343483870824018
 HingeJoint2D:

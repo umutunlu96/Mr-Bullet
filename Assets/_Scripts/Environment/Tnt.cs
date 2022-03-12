@@ -33,7 +33,7 @@ public class Tnt : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D target)
     {
-        if (target.gameObject.tag == "Bullet")
+        if (target.gameObject.tag == "Shirken")
         {
             GameObject exp = Instantiate(explosionPrefab);
             exp.transform.position = transform.position;
@@ -42,5 +42,27 @@ public class Tnt : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (target.gameObject.tag == "Ground")
+        {
+            GameObject exp = Instantiate(explosionPrefab);
+            exp.transform.position = transform.position;
+            Explode();
+            Destroy(exp, .8f);
+            Destroy(gameObject);
+        }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.gameObject.tag == "Enemy")
+        {
+            GameObject exp = Instantiate(explosionPrefab);
+            exp.transform.position = transform.position;
+            Explode();
+            Destroy(exp, .8f);
+            Destroy(gameObject);
+        }
+    }
+
 }

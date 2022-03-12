@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
         FindObjectOfType<GameManager>().CheckEnemyCount();
 
         SoundManager.instance.PlaySoundFX(deathSound, .5f);
-
         foreach (Transform obj in transform)
         {
             obj.GetComponent<Rigidbody2D>().gravityScale = 5;
@@ -36,15 +35,27 @@ public class Enemy : MonoBehaviour
 
         if (target.tag == "Plank" || target.tag == "BoxPlank")
         {
-            if (target.GetComponent<Rigidbody2D>().velocity.magnitude > 1.5f)
+            //if (target.GetComponent<Rigidbody2D>().mass > 4f)
                 Death();
         }
+
+        //if (target.tag == "Tnt")
+        //    Death();
 
         if (target.tag == "Ground")
         {
             if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
                 Death();
         }
+    }
 
+
+    private void OnCollisionEnter2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Plank" || target.gameObject.tag == "BoxPlank")
+        {
+            //if (target.GetComponent<Rigidbody2D>().mass > 4f)
+            Death();
+        }
     }
 }
