@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     private Animator fadeAnim;
 
+    private bool isEscape;
+
+
+
+
+
     void Awake()
     {
         levelNumber = PlayerPrefs.GetInt("Level",1);
@@ -52,6 +58,9 @@ public class GameManager : MonoBehaviour
             gameOver = true;
             GameUI.instance.GameOverScreen();
         }
+
+        CloseApplication();
+
     }
 
     public void CheckBullets()
@@ -104,5 +113,28 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         //StartCoroutine(FadeIn(0));
+    }
+
+    void CloseApplication()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (isEscape)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                isEscape = true;
+                if (!IsInvoking("DisableDoubleClick"))
+                    Invoke("DisableDoubleClick", 0.3f);
+            }
+        }
+    }
+
+
+    void DisableDoubleClick()
+    {
+        isEscape = false;
     }
 }

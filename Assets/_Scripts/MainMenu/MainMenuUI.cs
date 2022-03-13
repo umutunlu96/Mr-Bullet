@@ -13,6 +13,11 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
+        CloseApplication();
+    }
+
+    void CloseApplication()
+    {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (isEscape)
@@ -22,7 +27,6 @@ public class MainMenuUI : MonoBehaviour
             else
             {
                 isEscape = true;
-                closeLevelSelect();
                 if (!IsInvoking("DisableDoubleClick"))
                     Invoke("DisableDoubleClick", 0.3f);
             }
