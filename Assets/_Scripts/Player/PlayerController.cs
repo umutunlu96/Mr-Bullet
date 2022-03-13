@@ -90,7 +90,6 @@ public class PlayerController : MonoBehaviour
     {
         if (dir.x >= 0 && transform.localScale.x == -1 && distanceX > 0)
         {
-            print("Sag");
             transform.localScale = new Vector3(1, 1, 1);
             ballPos.localScale = new Vector3(1, 1, 1);
             transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
@@ -98,7 +97,6 @@ public class PlayerController : MonoBehaviour
 
         else if (dir.x < 0 && transform.localScale.x == 1 && distanceX > 0)
         {
-            print("Sol");
             transform.localScale = new Vector3(-1, 1, 1);
             ballPos.localScale = new Vector3(-1, 1, 1);
             transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
@@ -106,7 +104,6 @@ public class PlayerController : MonoBehaviour
 
         else if (dir.x >= 0 && transform.localScale.x == -1 && distanceX < 0)
         {
-            print("Sag");
             transform.localScale = new Vector3(1, 1, 1);
             ballPos.localScale = new Vector3(1, 1, 1);
             transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
@@ -114,7 +111,6 @@ public class PlayerController : MonoBehaviour
 
         else if (dir.x < 0 && transform.localScale.x == 1 && distanceX < 0)
         {
-            print("Sol");
             transform.localScale = new Vector3(-1, 1, 1);
             ballPos.localScale = new Vector3(-1, 1, 1);
             transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
