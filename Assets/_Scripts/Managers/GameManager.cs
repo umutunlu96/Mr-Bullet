@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject blackBall, goldenBall;
 
     private int levelNumber;
+    private bool isEscape;
 
 
     //private Animator fadeAnim;
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level", levelNumber + 1);
             }
         }
+
+        CloseApplication();
 
     }
 
@@ -115,5 +118,27 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         //StartCoroutine(FadeIn(0));
+    }
+
+    void CloseApplication()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (isEscape)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                isEscape = true;
+                if (!IsInvoking("DisableDoubleClick"))
+                    Invoke("DisableDoubleClick", 0.3f);
+            }
+        }
+    }
+
+    void DisableDoubleClick()
+    {
+        isEscape = false;
     }
 }
