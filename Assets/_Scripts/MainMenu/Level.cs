@@ -8,10 +8,20 @@ using System;
 public class Level : MonoBehaviour
 {
     private Button levelBtn;
-    public int levelReq;
+    private int levelReq;
+    private Text levelNumber;
+
+    private void Awake()
+    {
+        levelReq = transform.GetSiblingIndex() + 1;
+        levelNumber = transform.GetChild(0).gameObject.GetComponent<Text>();
+    }
+
 
     void Start()
     {
+        levelNumber.text = levelReq.ToString();
+
         levelBtn = GetComponent<Button>();
 
         if (PlayerPrefs.GetInt("Level", 1) >= levelReq)
@@ -22,7 +32,7 @@ public class Level : MonoBehaviour
 
     private void LoadLevel()
     {
-        SceneManager.LoadScene(gameObject.name);
+        SceneManager.LoadScene("Level" + levelReq.ToString());
     }
 
     void Update()

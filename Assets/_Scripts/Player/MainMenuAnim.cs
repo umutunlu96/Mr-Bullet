@@ -27,10 +27,8 @@ public class MainMenuAnim : MonoBehaviour
         switch (random)
         {
             case 0:
-                //anims.Play("Idle");
                 break;
             case 1:
-                //anims.Play("Idle");
                 break;
             case 2:
                 animator.SetTrigger("ThrowUp");
