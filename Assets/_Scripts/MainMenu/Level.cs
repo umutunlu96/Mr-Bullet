@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 
 public class Level : MonoBehaviour
 {
@@ -31,7 +30,7 @@ public class Level : MonoBehaviour
 
     private void LoadLevel()
     {
-        SceneManager.LoadScene("Level" + levelReq.ToString());
+        SceneManager.LoadScene(levelReq,LoadSceneMode.Single);
     }
 
     void Update()
