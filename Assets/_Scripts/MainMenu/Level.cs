@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         levelNumber.text = levelReq.ToString();
-
+        gameObject.name = "Level" + levelReq.ToString();
         levelBtn = GetComponent<Button>();
 
         if (PlayerPrefs.GetInt("Level", 1) >= levelReq)
