@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: 1.035
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -228,8 +228,8 @@ Transform:
   - {fileID: 1067168387}
   - {fileID: 36718581}
   - {fileID: 193340711}
-  - {fileID: 1016095575}
   - {fileID: 1699301246}
+  - {fileID: 1016095575}
   - {fileID: 2075531123}
   - {fileID: 1516227276}
   m_Father: {fileID: 0}
@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144242907338739324, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5144242907338739324, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7100453838558716633, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
+      propertyPath: m_ShapeTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 09d79077fdebcb84eba98cd3551fb35e, type: 3}
     - target: {fileID: 7100453838558716633, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_LocalAABB.m_Center.y
       value: 0.50000006
@@ -635,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144242907338739324, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5144242907338739324, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,6 +681,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7100453838558716633, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
+      propertyPath: m_ShapeTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 09d79077fdebcb84eba98cd3551fb35e, type: 3}
     - target: {fileID: 7100453838558716633, guid: 93991773e06f6f446bc69a240b9d34d7, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
       value: 0
@@ -876,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.85
+      value: 4.805
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 0f6826101dbae82488679f916d847367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -937,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -945,7 +953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.543
+      value: -3.569
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1269,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.798
+      value: -4.824
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.z

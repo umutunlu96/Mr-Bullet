@@ -263,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 839062fdcd190f64f9c10e351d8c9a44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 603667114509061954, guid: 839062fdcd190f64f9c10e351d8c9a44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KaleRight
       objectReference: {fileID: 0}
+    - target: {fileID: 5510982890792789816, guid: 839062fdcd190f64f9c10e351d8c9a44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839062fdcd190f64f9c10e351d8c9a44, type: 3}
 --- !u!4 &592686498 stripped
@@ -329,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.769543
+      value: 5.68
       objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439091, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1423,7 +1427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.495
+      value: 4.44
       objectReference: {fileID: 0}
     - target: {fileID: 8856466892124510277, guid: 37620735cce75e34db9ba46269e129cb, type: 3}
       propertyPath: m_LocalPosition.z
