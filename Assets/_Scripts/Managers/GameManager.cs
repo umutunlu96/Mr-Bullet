@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         if (enemyCount <= 0)
         {
             GameUI.instance.WinScreen();
-            if (levelNumber >= SceneManager.GetActiveScene().buildIndex)
+            if (levelNumber == SceneManager.GetActiveScene().buildIndex)
             {
                 PlayerPrefs.SetInt("Level",levelNumber + 1);
             }

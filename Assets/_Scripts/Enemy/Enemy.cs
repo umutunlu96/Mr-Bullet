@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public AudioClip deathSound;
+    private bool isLiving = true;
 
     public void Death()
     {
@@ -12,11 +13,13 @@ public class Enemy : MonoBehaviour
 
         FindObjectOfType<GameManager>().CheckEnemyCount();
 
-        SoundManager.instance.PlaySoundFX(deathSound, .5f);
+        SoundManager.instance.PlaySoundFX(deathSound, .2f);
         foreach (Transform obj in transform)
         {
             obj.GetComponent<Rigidbody2D>().gravityScale = 5;
         }
+
+        isLiving = false;
     }
 
 
@@ -27,13 +30,13 @@ public class Enemy : MonoBehaviour
         if (target.tag == "Shirken")
         {
 
-            if(transform.GetChild(0).GetComponent<Rigidbody2D>().gravityScale <1)
+            if(transform.GetChild(0).GetComponent<Rigidbody2D>().gravityScale <1 && isLiving)
                 Death();
             GetComponent<Rigidbody2D>().AddForce(new Vector2((direction.x > 0 ? 1 : -1) * .5f, direction.y > 0 ? .3f : -.3f),
                 ForceMode2D.Impulse);
         }
 
-        if (target.tag == "Plank" || target.tag == "BoxPlank")
+        if ((target.tag == "Plank" || target.tag == "BoxPlank") && isLiving)
         {
             //if (target.GetComponent<Rigidbody2D>().mass > 4f)
                 Death();
@@ -42,7 +45,7 @@ public class Enemy : MonoBehaviour
         //if (target.tag == "Tnt")
         //    Death();
 
-        if (target.tag == "Ground")
+        if (target.tag == "Ground" && isLiving)
         {
             if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
                 Death();
@@ -52,7 +55,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D target)
     {
-        if (target.gameObject.tag == "Plank" || target.gameObject.tag == "BoxPlank")
+        if ((target.gameObject.tag == "Plank" || target.gameObject.tag == "BoxPlank") && isLiving)
         {
             //if (target.GetComponent<Rigidbody2D>().mass > 4f)
             Death();

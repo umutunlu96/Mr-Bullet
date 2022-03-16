@@ -22,18 +22,16 @@ public class MainMenuAnim : MonoBehaviour
 
     private void PickOtherClip()
     {
-        int random = Random.Range(0, 4);
+        int random = Random.Range(0, 3);
 
         switch (random)
         {
             case 0:
                 break;
             case 1:
-                break;
-            case 2:
                 animator.SetTrigger("ThrowUp");
                 break;
-            case 3:
+            case 2:
                 animator.SetTrigger("Throw");
                 break;
         }

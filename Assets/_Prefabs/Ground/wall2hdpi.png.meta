@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 42064d08bc54b9744b4375ac4d917bba
+guid: 1f1f98f529a8c48419d99edb5350cf26
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -825779493654987663
-    second: Wall4_TopLeft
+      213: 2023954575560782654
+    second: Wall2_TopLeft
   - first:
-      213: 5660191009117612512
-    second: Wall4_Top
+      213: -126373897986035455
+    second: Wall2_Top
   - first:
-      213: 2690486767894328625
-    second: Wall4_TopRight
+      213: -4789710201740929706
+    second: Wall2_TopRight
   - first:
-      213: 8370059322770494739
-    second: Wall4_BotLeft
+      213: -2908457823901827557
+    second: Wall2_BotLeft
   - first:
-      213: -585678971734291560
-    second: Wall4_BotRight
+      213: -3688901390976542914
+    second: Wall2_BotRight
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wall4_TopLeft
+      name: Wall2_TopLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -144,17 +144,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17c74e9fced3a84f0800000000000000
-      internalID: -825779493654987663
+      spriteID: e33b3dd86f7861c10800000000000000
+      internalID: 2023954575560782654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall4_Top
+      name: Wall2_Top
       rect:
         serializedVersion: 2
-        x: 270
+        x: 246
         y: 509
         width: 37
         height: 37
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e9a05bdbb90d8e40800000000000000
-      internalID: 5660191009117612512
+      spriteID: 10139adfb970f3ef0800000000000000
+      internalID: -126373897986035455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall4_TopRight
+      name: Wall2_TopRight
       rect:
         serializedVersion: 2
         x: 509
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 135fa39e577865520800000000000000
-      internalID: 2690486767894328625
+      spriteID: 655da20d2f7878db0800000000000000
+      internalID: -4789710201740929706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall4_BotLeft
+      name: Wall2_BotLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3159eaa8b9c682470800000000000000
-      internalID: 8370059322770494739
+      spriteID: b1e3022d40513a7d0800000000000000
+      internalID: -2908457823901827557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall4_BotRight
+      name: Wall2_BotRight
       rect:
         serializedVersion: 2
         x: 509
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89b8c5904104fd7f0800000000000000
-      internalID: -585678971734291560
+      spriteID: e371663cab36eccc0800000000000000
+      internalID: -3688901390976542914
       vertices: []
       indices: 
       edges: []

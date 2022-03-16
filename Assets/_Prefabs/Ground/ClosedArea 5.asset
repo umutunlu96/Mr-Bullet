@@ -10,43 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7181f404f1447c0a7a17b3070b952b, type: 3}
-  m_Name: ClosedArea
+  m_Name: ClosedArea 5
   m_EditorClassIdentifier: 
   m_Angles:
   - m_Start: -45
     m_End: 45
     m_Order: 0
     m_Sprites:
-    - {fileID: -7087560416169146168, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 2660214023106146811, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_Start: 45
     m_End: 135
     m_Order: 0
     m_Sprites:
-    - {fileID: -7087560416169146168, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 2660214023106146811, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_Start: -135
     m_End: -45
     m_Order: 0
     m_Sprites:
-    - {fileID: -7087560416169146168, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 2660214023106146811, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_Start: -225
     m_End: -135
     m_Order: 0
     m_Sprites:
-    - {fileID: -7087560416169146168, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
-  m_FillTexture: {fileID: 2800000, guid: 10b0f94b57faafb4e90961b1892f9d69, type: 3}
+    - {fileID: 2660214023106146811, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
+  m_FillTexture: {fileID: 2800000, guid: 42b23a1d9cbbec4499c004304640c143, type: 3}
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: 2980607332314358626, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: -7402867296682077655, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_CornerType: 1
     m_Sprites:
-    - {fileID: 3635331669458132675, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 6191778423301918054, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_CornerType: 2
     m_Sprites:
-    - {fileID: 238409878130377601, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 3522244306345648595, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_CornerType: 3
     m_Sprites:
-    - {fileID: -1178932844004157227, guid: 0a2320feab8693947bb21d5e29c058cf, type: 3}
+    - {fileID: 2060856226087253562, guid: 35835b3a66643fb45acbcd86bc98b209, type: 3}
   - m_CornerType: 4
     m_Sprites:
     - {fileID: 0}

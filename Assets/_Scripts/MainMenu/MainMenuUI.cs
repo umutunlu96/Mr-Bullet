@@ -27,6 +27,7 @@ public class MainMenuUI : MonoBehaviour
             else
             {
                 isEscape = true;
+                closeLevelSelect();
                 if (!IsInvoking("DisableDoubleClick"))
                     Invoke("DisableDoubleClick", 0.3f);
             }
