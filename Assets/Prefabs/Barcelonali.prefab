@@ -331,6 +331,7 @@ MonoBehaviour:
   ballSpeed: 13
   ammo: 4
   ballLifeTime: 2.5
+  shootTime: 1
   Ball: {fileID: 3190940812504124847, guid: 34bc8906821432743927baad082427bd, type: 3}
   ballShootAudio: {fileID: 8300000, guid: 9262a435f9b9d9841851e6e8b23f3520, type: 3}
 --- !u!95 &7417724604580336449

@@ -1028,6 +1028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542259373}
     m_Modifications:
+    - target: {fileID: 2606986849341439088, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
+      propertyPath: shootTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2606986849341439090, guid: 240e600ea6fd37f4a896d71131b728d0, type: 3}
       propertyPath: m_Name
       value: Barcelonali

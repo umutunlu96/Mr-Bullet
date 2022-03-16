@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 100, ballSpeed = 15;
     public int ammo = 4;
     public float ballLifeTime = 1.5f;
+    public float shootTime;
     private float distanceX;
 
     private Transform ballPos;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    private bool canShoot = true;
 
 
     void Awake()
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (ammo > 0)
+                if (ammo > 0 && canShoot && GameObject.FindGameObjectsWithTag("Kale").Length > 0)
                 {
                     Shoot();
                     ballSprite.SetActive(false);
@@ -77,7 +79,9 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         ballPos.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
+
         RotatePlayer(direction);
+
         lineRenderer.enabled = true;
         lineRenderer.SetPosition(0, shootPos1.position);
         lineRenderer.SetPosition(1, shootPos2.position);
@@ -134,11 +138,21 @@ public class PlayerController : MonoBehaviour
 
         ammo--;
 
+        canShoot = false;
+
+        Invoke("ChangeShootState", shootTime);
+
         FindObjectOfType<GameManager>().CheckBalls();
 
         animator.SetTrigger("Shoot");
 
         Destroy(Ball, ballLifeTime);
+    }
+
+
+    void ChangeShootState()
+    {
+        canShoot = true;
     }
 
     bool IsMouseOnUI()

@@ -12,7 +12,7 @@ public class Kale : MonoBehaviour
 
         FindObjectOfType<GameManager>().CheckKaleCount();
 
-        SoundManager.instance.PlaySoundFX(goalSound, .5f);
+        SoundManager.instance.PlaySoundFX(goalSound, .2f);
     }
 
 

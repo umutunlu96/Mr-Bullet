@@ -7,7 +7,9 @@ public class MainMenuUI : MonoBehaviour
 {
     public GameObject play;
     public GameObject levelSelection;
+    public GameObject main;
 
+    public int maxLevelCount;
     private bool isEscape;
 
     private void Update()
@@ -26,6 +28,7 @@ public class MainMenuUI : MonoBehaviour
             else
             {
                 isEscape = true;
+                ReturnMain();
                 if (!IsInvoking("DisableDoubleClick"))
                     Invoke("DisableDoubleClick", 0.3f);
             }
@@ -39,7 +42,10 @@ public class MainMenuUI : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("Level",1), LoadSceneMode.Single);
+        if (PlayerPrefs.GetInt("Level", 1) >= maxLevelCount)
+            SceneManager.LoadScene(maxLevelCount, LoadSceneMode.Single);
+        else
+            SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1), LoadSceneMode.Single);
     }
 
 
@@ -47,5 +53,15 @@ public class MainMenuUI : MonoBehaviour
     {
         play.SetActive(false);
         levelSelection.SetActive(true);
+        main.SetActive(false);
     }
+
+    public void ReturnMain()
+    {
+        play.SetActive(true);
+        levelSelection.SetActive(false);
+        main.SetActive(true);
+    }
+
+
 }
