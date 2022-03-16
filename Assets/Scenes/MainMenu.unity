@@ -774,7 +774,7 @@ MonoBehaviour:
   play: {fileID: 674251040}
   levelSelection: {fileID: 982744697}
   main: {fileID: 1252852758}
-  maxLevelCount: 30
+  maxLevelCount: 31
 --- !u!1 &147444858
 GameObject:
   m_ObjectHideFlags: 0
