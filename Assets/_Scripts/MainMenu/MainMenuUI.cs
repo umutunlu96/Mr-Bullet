@@ -8,12 +8,22 @@ public class MainMenuUI : MonoBehaviour
     public GameObject play;
     public GameObject levelSelection;
     public GameObject ninjaMainMenu;
-
+    public int maxLevel;
     private bool isEscape;
 
     private void Update()
     {
         CloseApplication();
+    }
+
+    public void anan()
+    {
+        print(PlayerPrefs.GetInt("Level"));
+    }
+
+    public void ananset()
+    {
+        PlayerPrefs.SetInt("Level", 32);
     }
 
     void CloseApplication()
@@ -41,7 +51,10 @@ public class MainMenuUI : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
+        if(PlayerPrefs.GetInt("Level") >= maxLevel)
+            SceneManager.LoadScene(maxLevel);
+        else
+            SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
     }
 
     private void closeLevelSelect()
