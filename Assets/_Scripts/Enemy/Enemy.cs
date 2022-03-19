@@ -39,26 +39,19 @@ public class Enemy : MonoBehaviour
         if ((target.tag == "Plank" || target.tag == "BoxPlank") && isLiving)
         {
             //if (target.GetComponent<Rigidbody2D>().mass > 4f)
-                Death();
+            Death();
         }
 
-        //if (target.tag == "Tnt")
-        //    Death();
+        if (target.tag == "Tnt")
+        {
+            Death();
+        }
 
         if (target.tag == "Ground" && isLiving)
         {
-            if (GetComponent<Rigidbody2D>().velocity.magnitude > 2)
+            if (GetComponent<Rigidbody2D>().velocity.magnitude > .2f)
                 Death();
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D target)
-    {
-        if ((target.gameObject.tag == "Plank" || target.gameObject.tag == "BoxPlank") && isLiving)
-        {
-            //if (target.GetComponent<Rigidbody2D>().mass > 4f)
-            Death();
-        }
-    }
 }
