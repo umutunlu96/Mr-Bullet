@@ -219,7 +219,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.1336361, y: 0.19416669}
+  m_ConnectedAnchor: {x: -0.13363613, y: 0.19416666}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -365,7 +365,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.09181814, y: -0.17750004}
+  m_ConnectedAnchor: {x: -0.091818206, y: -0.17749994}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -512,7 +512,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.13545458, y: 0.18916665}
+  m_ConnectedAnchor: {x: 0.13545452, y: 0.18916671}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -779,7 +779,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.00454545, y: 0.23750006}
+  m_ConnectedAnchor: {x: 0.004545472, y: 0.23750003}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -950,7 +950,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.07582595, y: -0.28666714}
+  m_ConnectedAnchor: {x: -0.075825974, y: -0.28666708}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -988,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 4144343483855612488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: -3.05, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 4144343483191044112}
   - {fileID: 4144343483178942004}
@@ -1205,7 +1205,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.079090916, y: -0.20166674}
+  m_ConnectedAnchor: {x: 0.0790909, y: -0.20166667}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
