@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canShoot = true;
 
+    private float scale;
 
     void Awake()
     {
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour
         lineRenderer.enabled = false;
 
         animator = GetComponent<Animator>();
+
+        scale = transform.localScale.x;
+
     }
     private void Start()
     {
@@ -92,31 +96,31 @@ public class PlayerController : MonoBehaviour
 
     void RotatePlayer(Vector2 dir)
     {
-        if (dir.x >= 0 && transform.localScale.x == -1 && distanceX > 0)
+        if (dir.x >= 0 && transform.localScale.x < 0 && distanceX > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            ballPos.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(scale, scale, 1);
+            ballPos.localScale = new Vector3(scale, scale, 1);
             transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
         }
 
-        else if (dir.x < 0 && transform.localScale.x == 1 && distanceX > 0)
+        else if (dir.x < 0 && transform.localScale.x > 0 && distanceX > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
-            ballPos.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-scale, scale, 1);
+            ballPos.localScale = new Vector3(-scale, scale, 1);
             transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
         }
 
-        else if (dir.x >= 0 && transform.localScale.x == -1 && distanceX < 0)
+        else if (dir.x >= 0 && transform.localScale.x < 0 && distanceX < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            ballPos.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(scale, scale, 1);
+            ballPos.localScale = new Vector3(scale, scale, 1);
             transform.position = new Vector3(ballPos.position.x + distanceX, transform.position.y, transform.position.z);
         }
 
-        else if (dir.x < 0 && transform.localScale.x == 1 && distanceX < 0)
+        else if (dir.x < 0 && transform.localScale.x > 0 && distanceX < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
-            ballPos.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-scale, scale, 1);
+            ballPos.localScale = new Vector3(-scale, scale, 1);
             transform.position = new Vector3(ballPos.position.x - distanceX, transform.position.y, transform.position.z);
         }
     }
