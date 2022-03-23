@@ -22,13 +22,13 @@ public class GameManager : MonoBehaviour
     private bool isEscape;
 
 
-    //private Animator fadeAnim;
+    private Animator fadeAnim;
 
     void Awake()
     {
         levelNumber = PlayerPrefs.GetInt("Level",1);
 
-        //fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
+        fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
         FindObjectOfType<PlayerController>().ammo = blackBalls + goldenBalls;
 
@@ -36,12 +36,14 @@ public class GameManager : MonoBehaviour
         {
             GameObject bbTemp = Instantiate(blackBall);
             bbTemp.transform.SetParent(GameObject.Find("Balls").transform);
+            bbTemp.transform.localScale = new Vector3(1, 1, 1);
         }
 
         for (int i = 0; i < goldenBalls; i++)
         {
             GameObject gbTemp = Instantiate(goldenBall);
             gbTemp.transform.SetParent(GameObject.Find("Balls").transform);
+            gbTemp.transform.localScale = new Vector3(1, 1, 1);
         }
 
     }
@@ -92,32 +94,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
-
-    //IEnumerator FadeIn(int sceneIndex)
-    //{
-    //    fadeAnim.SetTrigger("End");
-    //    yield return new WaitForSeconds(1);
-    //    SceneManager.LoadScene(sceneIndex);
-    //}
+    IEnumerator FadeIn(int sceneIndex)
+    {
+        fadeAnim.SetTrigger("End");
+        yield return new WaitForSeconds(.5f);
+        SceneManager.LoadScene(sceneIndex);
+    }
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void Exit()
     {
-        SceneManager.LoadScene("MainMenu");
-        //StartCoroutine(FadeIn(0));
+        //SceneManager.LoadScene("MainMenu");
+        StartCoroutine(FadeIn(0));
     }
 
     void CloseApplication()
