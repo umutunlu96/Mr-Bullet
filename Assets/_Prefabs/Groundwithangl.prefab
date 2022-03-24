@@ -86,13 +86,13 @@ SpriteShapeRenderer:
   - {fileID: 4798270663585388269, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
   - {fileID: 4254160965968536396, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
   - {fileID: 5758108081054248210, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
-  - {fileID: 120544692977609834, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
-  - {fileID: 120544692977609834, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
-  - {fileID: 120544692977609834, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
-  - {fileID: 120544692977609834, guid: fde07d1b80b9a7f429f2ec81eed67526, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 0, y: -0.5, z: 0}
-    m_Extent: {x: 4.083334, y: 1.5833335, z: 0}
+    m_Center: {x: 0, y: -0.6, z: 0}
+    m_Extent: {x: 4.083334, y: 1.6833335, z: 0}
 --- !u!114 &4958965179794630752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -4, y: -2, z: 0}
+    - position: {x: -4, y: -2.2, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 4, y: -2, z: 0}
+    - position: {x: 4, y: -2.2, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -180,12 +180,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: -0.03}
   m_EdgeRadius: 0.2
   m_Points:
-  - {x: -3.916667, y: -1.9166666}
+  - {x: -3.9166672, y: -2.1166668}
   - {x: -3.916667, y: 0.9166667}
   - {x: 3.9166667, y: 0.91666675}
-  - {x: 3.916667, y: -1.9166666}
-  - {x: -3.8168647, y: -1.9166666}
-  - {x: -3.916667, y: -1.9166666}
+  - {x: 3.916667, y: -2.1166668}
+  - {x: -3.8168647, y: -2.1166668}
+  - {x: -3.9166672, y: -2.1166668}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
