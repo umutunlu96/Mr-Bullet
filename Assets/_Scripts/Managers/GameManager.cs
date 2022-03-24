@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             GameObject blackShirken = Instantiate(this.blackShirken);
             blackShirken.transform.SetParent(GameObject.Find("Shirkens").transform);
             blackShirken.transform.rotation = Quaternion.Euler(0,0,-30);
+            blackShirken.transform.localScale = new Vector3(1, 1, 1);
         }
 
         for (int i = 0; i < goldenShirkens; i++)
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
             GameObject goldenShirken = Instantiate(this.goldenShirken);
             goldenShirken.transform.SetParent(GameObject.Find("Shirkens").transform);
             goldenShirken.transform.rotation = Quaternion.Euler(0, 0, -30);
+            goldenShirken.transform.localScale = new Vector3(1, 1, 1);
         }
 
     }

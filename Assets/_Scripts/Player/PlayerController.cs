@@ -98,11 +98,11 @@ public class PlayerController : MonoBehaviour
 
         if (direction >= 0)
         {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1);
         }
         if (direction < 0)
         {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            gameObject.transform.localScale = new Vector3(-1.25f, 1.25f, 1);
         }
     }
 
