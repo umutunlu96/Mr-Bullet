@@ -10,6 +10,8 @@ public class AdManager : MonoBehaviour
 
     public static AdManager instance;
 
+    private int playedLevel;
+
     private void Awake()
     {
         if (instance == null)
@@ -28,70 +30,14 @@ public class AdManager : MonoBehaviour
         MobileAds.Initialize(InitializationStatus => { });
     }
 
-    public void DestroyAds()
-    {
-        this.bannerAd.Destroy();
-        this.interstitialAd.Destroy();
-        this.rewardedAd.Destroy();
-    }
-
     private AdRequest CreateAdRequest()
     {
         return new AdRequest.Builder().Build();
 
     }
 
-    public void RequestBanner()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-        this.bannerAd = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
-    public void RequestBanner2()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-
-        AdSize adsize = new AdSize(350,50);
-
-        this.bannerAd = new BannerView(adUnitId, adsize, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
-    public void RequestBanner3()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-        this.bannerAd = new BannerView(adUnitId, AdSize.Leaderboard, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
-    public void RequestBanner4()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-        this.bannerAd = new BannerView(adUnitId, AdSize.MediumRectangle, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
-    public void RequestBanner5()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-        this.bannerAd = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
-    public void RequestBanner6()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
-        this.bannerAd = new BannerView(adUnitId, AdSize.IABBanner, AdPosition.Bottom);
-
-        this.bannerAd.LoadAd(this.CreateAdRequest());
-    }
-
+    /*INTERSTIAL ADS*/
+    #region INTERSTIAL
     public void RequestIntertial()
     {
         string adUnitId = "ca-app-pub-3940256099942544/1033173712";
@@ -102,6 +48,20 @@ public class AdManager : MonoBehaviour
         this.interstitialAd = new InterstitialAd(adUnitId);
 
         this.interstitialAd.LoadAd(this.CreateAdRequest());
+
+        this.interstitialAd.OnAdFailedToLoad += InterstitialAd_OnAdFailedToLoad;
+
+        this.interstitialAd.OnAdClosed += InterstitialAd_OnAdClosed;
+    }
+
+    private void InterstitialAd_OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
+    {
+        RequestIntertial();
+    }
+
+    private void InterstitialAd_OnAdClosed(object sender, EventArgs e)
+    {
+        //InterstitialAd CLOSED
     }
 
     public void ShowIntertial()
@@ -116,9 +76,11 @@ public class AdManager : MonoBehaviour
             print("interstitialAd not loaded yet.");
         }
     }
+    #endregion
 
 
-
+    /*REWARDED ADS*/
+    #region REWARDED
     public void RequestRewarded()
     {
         string adUnitId = "ca-app-pub-3940256099942544/5224354917";
@@ -142,4 +104,5 @@ public class AdManager : MonoBehaviour
             print("rewardedAd not loaded yet.");
         }
     }
+    #endregion
 }
