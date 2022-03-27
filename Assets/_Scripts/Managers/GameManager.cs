@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Fade anim kapatildi.
-
-
 public class GameManager : MonoBehaviour
 {
     public int kaleCount = 1;
-
+    
     [HideInInspector]
     public bool gameOver, gameWin;
 
@@ -21,12 +18,19 @@ public class GameManager : MonoBehaviour
     private int levelNumber;
     private bool isEscape;
 
-
     private Animator fadeAnim;
+
+
+    [Header("ADS")]
+    private bool SHOWADS = true;
+    public int adShowCount; //Ads
+    public bool adShow; //Ads
+    public bool rewardRequest;
 
     void Awake()
     {
         levelNumber = PlayerPrefs.GetInt("Level",1);
+        adShowCount = PlayerPrefs.GetInt("AdShowCount", 0);
 
         fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
@@ -45,7 +49,11 @@ public class GameManager : MonoBehaviour
             gbTemp.transform.SetParent(GameObject.Find("Balls").transform);
             gbTemp.transform.localScale = new Vector3(1, 1, 1);
         }
+    }
 
+    private void Start()
+    {
+        AdCheck(SHOWADS);
     }
 
     void Update()
@@ -55,6 +63,9 @@ public class GameManager : MonoBehaviour
         {
             gameOver = true;
             GameUI.instance.GameOverScreen();
+
+            ShowAd(adShow);
+            RewardRequest(rewardRequest);
         }
 
         if (gameWin && GameObject.FindGameObjectsWithTag("Ball").Length <= 0)
@@ -64,10 +75,11 @@ public class GameManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Level", levelNumber + 1);
             }
+
+            ShowAd(adShow);
+
         }
-
         CloseApplication();
-
     }
 
     public void CheckBalls()
@@ -94,6 +106,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void AdCheck(bool showAds)
+    {
+        if (showAds)
+        {
+            adShowCount = PlayerPrefs.GetInt("AdShowCount", 0);
+            rewardRequest = true;
+            if (adShowCount >= 5)
+            {
+                AdManager.instance.RequestIntertial();
+                adShow = true;
+            }
+        }
+    }
+
+    private void ShowAd(bool adShow)
+    {
+        if (adShow)
+        {
+            AdManager.instance.ShowIntertial();
+            this.adShow = false;
+        }
+    }
+    private void RewardRequest(bool rewardRequest)
+    {
+        if (rewardRequest)
+        {
+            AdManager.instance.RequestRewarded();
+            this.rewardRequest = false;
+        }
+    }
+
+    public void RewardShow()
+    {
+        AdManager.instance.ShowRewarded();
+    }
+
     IEnumerator FadeIn(int sceneIndex)
     {
         fadeAnim.SetTrigger("End");
@@ -105,12 +153,14 @@ public class GameManager : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
+        PlayerPrefs.SetInt("AdShowCount", PlayerPrefs.GetInt("AdShowCount") + 1);
     }
 
     public void NextLevel()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
+        PlayerPrefs.SetInt("AdShowCount", PlayerPrefs.GetInt("AdShowCount") + 1);
     }
 
     public void Exit()
@@ -125,7 +175,7 @@ public class GameManager : MonoBehaviour
         {
             if (isEscape)
             {
-                Application.Quit();
+                StartCoroutine(FadeIn(0));
             }
             else
             {

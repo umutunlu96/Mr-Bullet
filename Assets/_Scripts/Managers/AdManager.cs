@@ -40,7 +40,9 @@ public class AdManager : MonoBehaviour
     #region INTERSTIAL
     public void RequestIntertial()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";     //Test ID
+        //string adUnitId = "ca-app-pub-4762392528800851/6119721024";     //Gercek ID
+
 
         if (this.interstitialAd != null)
             this.interstitialAd.Destroy();
@@ -61,7 +63,8 @@ public class AdManager : MonoBehaviour
 
     private void InterstitialAd_OnAdClosed(object sender, EventArgs e)
     {
-        //InterstitialAd CLOSED
+        PlayerPrefs.SetInt("AdShowCount", 0);
+        GameObject.FindObjectOfType<GameManager>().adShowCount = 0;
     }
 
     public void ShowIntertial()
@@ -83,13 +86,34 @@ public class AdManager : MonoBehaviour
     #region REWARDED
     public void RequestRewarded()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        string adUnitId = "ca-app-pub-3940256099942544/5224354917";         //Test ID
+        //string adUnitId = "ca-app-pub-4762392528800851/6858087620";         //Gercek ID
+
         if (this.rewardedAd != null)
             this.rewardedAd.Destroy();
 
         this.rewardedAd = new RewardedAd(adUnitId);
 
         this.rewardedAd.LoadAd(this.CreateAdRequest());
+
+        this.rewardedAd.OnAdLoaded += RewardedAd_OnAdLoaded; ;
+
+        this.rewardedAd.OnAdFailedToLoad += RewardedAd_OnAdFailedToLoad;
+
+        this.rewardedAd.OnUserEarnedReward += RewardedAd_OnUserEarnedReward;
+    }
+
+    private void RewardedAd_OnAdLoaded(object sender, EventArgs e)
+    {
+        ShowRewarded();
+    }
+    private void RewardedAd_OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
+    {
+        RequestRewarded();
+    }
+    private void RewardedAd_OnUserEarnedReward(object sender, Reward e)
+    {
+        GameObject.FindObjectOfType<GameManager>().NextLevel();
     }
 
     public void ShowRewarded()
