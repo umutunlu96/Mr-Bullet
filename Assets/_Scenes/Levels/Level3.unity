@@ -900,6 +900,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1614316137}
     m_Modifications:
+    - target: {fileID: 3157137275759411134, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 208292141}
+    - target: {fileID: 3157137275759411134, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RewardShow
+      objectReference: {fileID: 0}
     - target: {fileID: 4706914138858334550, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1082,6 +1090,68 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4706914140408741089, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
   m_PrefabInstance: {fileID: 795220147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &810567262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1918342292}
+    m_Modifications:
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205655, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_Name
+      value: AdManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+--- !u!4 &810567263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+  m_PrefabInstance: {fileID: 810567262}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1437543081
 PrefabInstance:
@@ -1479,6 +1549,7 @@ Transform:
   m_Children:
   - {fileID: 208292142}
   - {fileID: 263529619}
+  - {fileID: 810567263}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1602,7 +1673,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.6800003
+  orthographic size: 8.424
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

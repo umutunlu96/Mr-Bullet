@@ -22,13 +22,19 @@ public class GameManager : MonoBehaviour
 
     private bool isEscape;
 
-
+    [Header("ADS")]
+    private bool SHOWADS = false;
+    public int adShowCount; //Ads
+    public bool adShow; //Ads
+    public bool rewardRequest;
 
 
 
     void Awake()
     {
         levelNumber = PlayerPrefs.GetInt("Level",1);
+
+        adShowCount = PlayerPrefs.GetInt("AdShowCount", 0);
 
         //fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
@@ -52,6 +58,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        AdCheck(SHOWADS);
+    }
+
     void Update()
     {
         if (!gameOver && FindObjectOfType<PlayerController>().ammo <= 0 && enemyCount > 0 && 
@@ -59,6 +70,9 @@ public class GameManager : MonoBehaviour
         {
             gameOver = true;
             GameUI.instance.GameOverScreen();
+
+            ShowAd(adShow);
+            RewardRequest(rewardRequest);
         }
 
         CloseApplication();
@@ -89,8 +103,47 @@ public class GameManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Level",levelNumber + 1);
             }
+
+            ShowAd(adShow);
         }
     }
+
+    private void AdCheck(bool showAds)
+    {
+        if (showAds)
+        {
+            adShowCount = PlayerPrefs.GetInt("AdShowCount", 0);
+            rewardRequest = true;
+            if (adShowCount >= 5)
+            {
+                AdManager.instance.RequestIntertial();
+                adShow = true;
+            }
+        }
+    }
+
+    private void ShowAd(bool adShow)
+    {
+        if (adShow)
+        {
+            AdManager.instance.ShowIntertial();
+            this.adShow = false;
+        }
+    }
+    private void RewardRequest(bool rewardRequest)
+    {
+        if (rewardRequest)
+        {
+            AdManager.instance.RequestRewarded();
+            this.rewardRequest = false;
+        }
+    }
+
+    public void RewardShow()
+    {
+        AdManager.instance.ShowRewarded();
+    }
+
 
     IEnumerator FadeIn(int sceneIndex)
     {

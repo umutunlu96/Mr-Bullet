@@ -717,7 +717,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.6800003
+  orthographic size: 8.424
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1380,9 +1380,72 @@ Transform:
   m_Children:
   - {fileID: 518677052504196063}
   - {fileID: 1759557869021241359}
+  - {fileID: 1927211248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1927211247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1749424888}
+    m_Modifications:
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483769478921205655, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+      propertyPath: m_Name
+      value: AdManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+--- !u!4 &1927211248 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4483769478921205653, guid: 2a4b3e1d1b882fa48a4c1462a3dcadbf, type: 3}
+  m_PrefabInstance: {fileID: 1927211247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1961658685 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1759557869347121459, guid: 2672f5a9da054974d85dccef22010443, type: 3}
@@ -1840,6 +1903,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1424710349}
     m_Modifications:
+    - target: {fileID: 3157137275759411134, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961658685}
+    - target: {fileID: 3157137275759411134, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RewardShow
+      objectReference: {fileID: 0}
     - target: {fileID: 4706914138858334550, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
