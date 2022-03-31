@@ -40,8 +40,8 @@ public class AdManager : MonoBehaviour
     #region INTERSTIAL
     public void RequestIntertial()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";     //Test ID
-        //string adUnitId = "ca-app-pub-4762392528800851/6119721024";     //Gercek ID
+        //string adUnitId = "ca-app-pub-3940256099942544/1033173712";     //Test ID
+        string adUnitId = "ca-app-pub-4762392528800851/6119721024";     //Gercek ID
 
 
         if (this.interstitialAd != null)
@@ -86,8 +86,8 @@ public class AdManager : MonoBehaviour
     #region REWARDED
     public void RequestRewarded()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";         //Test ID
-        //string adUnitId = "ca-app-pub-4762392528800851/6858087620";         //Gercek ID
+        //string adUnitId = "ca-app-pub-3940256099942544/5224354917";         //Test ID
+        string adUnitId = "ca-app-pub-4762392528800851/6858087620";         //Gercek ID
 
         if (this.rewardedAd != null)
             this.rewardedAd.Destroy();
