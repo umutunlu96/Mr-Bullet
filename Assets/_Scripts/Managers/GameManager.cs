@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
 
 
     [Header("ADS")]
-    private bool SHOWADS = false;
+    private bool SHOWADS = true;
     public int adShowCount; //Ads
     public bool adShow; //Ads
-    public bool rewardRequest;  //Ads
+    public bool rewardRequest;
 
     void Awake()
     {
