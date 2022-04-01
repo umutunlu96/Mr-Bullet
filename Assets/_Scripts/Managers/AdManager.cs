@@ -105,8 +105,9 @@ public class AdManager : MonoBehaviour
 
     private void RewardedAd_OnAdLoaded(object sender, EventArgs e)
     {
-        ShowRewarded();
+
     }
+
     private void RewardedAd_OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
     {
         RequestRewarded();
@@ -114,6 +115,7 @@ public class AdManager : MonoBehaviour
     private void RewardedAd_OnUserEarnedReward(object sender, Reward e)
     {
         GameObject.FindObjectOfType<GameManager>().NextLevel();
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
     }
 
     public void ShowRewarded()
@@ -125,6 +127,7 @@ public class AdManager : MonoBehaviour
 
         else
         {
+            RequestRewarded();
             print("rewardedAd not loaded yet.");
         }
     }
