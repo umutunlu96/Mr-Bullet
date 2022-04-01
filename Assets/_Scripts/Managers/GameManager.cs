@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("ADS")]
-    private bool SHOWADS = false;
+    private bool SHOWADS = true;
     public int adShowCount; //Ads
     public bool adShow; //Ads
     public bool rewardRequest;  //Ads
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         if (gameWin && GameObject.FindGameObjectsWithTag("Ball").Length <= 0)
         {
             GameUI.instance.WinScreen();
-            if (levelNumber >= SceneManager.GetActiveScene().buildIndex)
+            if (levelNumber == SceneManager.GetActiveScene().buildIndex)
             {
                 PlayerPrefs.SetInt("Level", levelNumber + 1);
             }
