@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2497170755172085508, guid: 89296ff107bc96e43bde2a09cb84763d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2497170755172085508, guid: 89296ff107bc96e43bde2a09cb84763d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -431,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4144343483855612493, guid: 4d491a84bf773554e93033be1e141d48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.82
+      value: -3.3799999
       objectReference: {fileID: 0}
     - target: {fileID: 4144343483855612493, guid: 4d491a84bf773554e93033be1e141d48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5469144986725918024, guid: b38894b7091e6254a831793766c25111, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.58
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 5469144986725918024, guid: b38894b7091e6254a831793766c25111, type: 3}
       propertyPath: m_LocalPosition.z
@@ -582,6 +582,10 @@ PrefabInstance:
     - target: {fileID: 5469144986725918029, guid: b38894b7091e6254a831793766c25111, type: 3}
       propertyPath: m_Name
       value: Small Closed Sprite Shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 5469144986725918030, guid: b38894b7091e6254a831793766c25111, type: 3}
+      propertyPath: m_FillPixelPerUnit
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5469144986725918031, guid: b38894b7091e6254a831793766c25111, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -700,7 +704,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.424
+  orthographic size: 6.391617
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -840,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7253686469308525523, guid: c3de52ca284d47044b6b8fece6be3201, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.97
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: 7253686469308525523, guid: c3de52ca284d47044b6b8fece6be3201, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1155,6 +1159,10 @@ PrefabInstance:
       propertyPath: m_Sprites.Array.data[7]
       value: 
       objectReference: {fileID: -3278627040347558245, guid: 40a2c42969a677845bce69feac821f55, type: 3}
+    - target: {fileID: 5208922350212827791, guid: d21db8d58b3af3a4d9f38c099528f1bd, type: 3}
+      propertyPath: m_FillPixelPerUnit
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21db8d58b3af3a4d9f38c099528f1bd, type: 3}
 --- !u!1001 &518677052504196062
