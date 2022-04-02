@@ -114,6 +114,7 @@ public class AdManager : MonoBehaviour
     private void RewardedAd_OnUserEarnedReward(object sender, Reward e)
     {
         GameObject.FindObjectOfType<GameManager>().NextLevel();
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
     }
 
     public void ShowRewarded()

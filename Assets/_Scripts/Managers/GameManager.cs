@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         adShowCount = PlayerPrefs.GetInt("AdShowCount", 0);
 
-        //fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
+        fadeAnim = GameObject.Find("Fade").GetComponent<Animator>();
 
         FindObjectOfType<PlayerController>().ammo = blackShirkens + goldenShirkens;
 
@@ -154,20 +154,22 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex));
+        PlayerPrefs.SetInt("AdShowCount", PlayerPrefs.GetInt("AdShowCount") + 1);
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(FadeIn(SceneManager.GetActiveScene().buildIndex + 1));
+        PlayerPrefs.SetInt("AdShowCount", PlayerPrefs.GetInt("AdShowCount") + 1);
     }
 
     public void Exit()
     {
-        SceneManager.LoadScene("MainMenu");
-        //StartCoroutine(FadeIn(0));
+        //SceneManager.LoadScene("MainMenu");
+        StartCoroutine(FadeIn(0));
     }
 
     void CloseApplication()
