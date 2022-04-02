@@ -16,16 +16,6 @@ public class MainMenuUI : MonoBehaviour
         CloseApplication();
     }
 
-    public void anan()
-    {
-        print(PlayerPrefs.GetInt("Level"));
-    }
-
-    public void ananset()
-    {
-        PlayerPrefs.SetInt("Level", 32);
-    }
-
     void CloseApplication()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
