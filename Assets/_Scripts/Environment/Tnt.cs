@@ -35,6 +35,7 @@ public class Tnt : MonoBehaviour
     {
         if (target.gameObject.tag == "Shirken")
         {
+            Destroy(target.gameObject);
             GameObject exp = Instantiate(explosionPrefab);
             exp.transform.position = transform.position;
             Explode();
@@ -43,6 +44,15 @@ public class Tnt : MonoBehaviour
         }
 
         if (target.gameObject.tag == "Ground")
+        {
+            GameObject exp = Instantiate(explosionPrefab);
+            exp.transform.position = transform.position;
+            Explode();
+            Destroy(exp, .8f);
+            Destroy(gameObject);
+        }
+
+        if (target.gameObject.tag == "BodyPart")
         {
             GameObject exp = Instantiate(explosionPrefab);
             exp.transform.position = transform.position;

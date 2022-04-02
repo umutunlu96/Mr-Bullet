@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8280118805655397476}
   - component: {fileID: 8280118805655397479}
   - component: {fileID: 8280118805655397478}
-  - component: {fileID: 8280118805655397529}
   - component: {fileID: 8280118805655397528}
+  - component: {fileID: 8172921809396111291}
   m_Layer: 6
   m_Name: Link-1
   m_TagString: Untagged
@@ -156,18 +156,6 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!114 &8280118805655397529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280118805655397530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c3a21b5c0314a9429273083c83ef285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &8280118805655397528
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,6 +172,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0020149685, y: 0.0008599758}
   m_Size: {x: 0.06396546, y: 0.824121}
   m_Direction: 0
+--- !u!114 &8172921809396111291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280118805655397530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3a21b5c0314a9429273083c83ef285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8280118806095384264
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 8280118806095384277}
   - component: {fileID: 8280118806095384276}
   - component: {fileID: 8280118806095384279}
-  - component: {fileID: 8280118806095384278}
+  - component: {fileID: 5063673169874904987}
   m_Layer: 6
   m_Name: Link-2
   m_TagString: Untagged
@@ -331,7 +331,7 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!114 &8280118806095384278
+--- !u!114 &5063673169874904987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8280118806869626433}
   - component: {fileID: 8280118806869626432}
   - component: {fileID: 8280118806869626435}
-  - component: {fileID: 8280118806869626434}
+  - component: {fileID: 8359888764167925629}
   m_Layer: 6
   m_Name: Link-3
   m_TagString: Untagged
@@ -618,7 +618,7 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!114 &8280118806869626434
+--- !u!114 &8359888764167925629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

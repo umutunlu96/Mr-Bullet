@@ -105,7 +105,7 @@ public class AdManager : MonoBehaviour
 
     private void RewardedAd_OnAdLoaded(object sender, EventArgs e)
     {
-        ShowRewarded();
+        
     }
     private void RewardedAd_OnAdFailedToLoad(object sender, AdFailedToLoadEventArgs e)
     {

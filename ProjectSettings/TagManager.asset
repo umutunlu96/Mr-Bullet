@@ -14,6 +14,7 @@ TagManager:
   - GoldenShirken
   - BlackShirken
   - Shirken
+  - Rope
   layers:
   - Default
   - TransparentFX

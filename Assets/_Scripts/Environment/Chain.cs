@@ -12,7 +12,13 @@ public class Chain : MonoBehaviour
             GameObject parent = transform.parent.gameObject;
             
             transform.parent.GetComponent<DistanceJoint2D>().enabled = false;
-            transform.GetComponent<HingeJoint2D>().enabled = false;
+            //transform.GetComponent<HingeJoint2D>().enabled = false;
+
+
+            foreach (var component in GetComponents<HingeJoint2D>())
+            {
+                component.enabled = false;
+            }
 
             for (int i = 0; i < parent.transform.childCount; i++)
             {

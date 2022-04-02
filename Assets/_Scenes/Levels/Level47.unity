@@ -1141,6 +1141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295266220}
     m_Modifications:
+    - target: {fileID: 1498754853, guid: c5635789a656c0049893d2a7a1a25ea7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3086724236195511677, guid: c5635789a656c0049893d2a7a1a25ea7, type: 3}
       propertyPath: m_Name
       value: Background
@@ -1188,6 +1192,10 @@ PrefabInstance:
     - target: {fileID: 3518380708005790575, guid: c5635789a656c0049893d2a7a1a25ea7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985133845981622234, guid: c5635789a656c0049893d2a7a1a25ea7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5635789a656c0049893d2a7a1a25ea7, type: 3}

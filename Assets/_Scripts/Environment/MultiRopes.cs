@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class MultiRopes : MonoBehaviour
 {
-    private Transform[] ropes;
-    private int ropeCount;
-
-    private void Awake()
+    private void OnTriggerEnter2D(Collider2D target)
     {
-        foreach (Transform rope in ropes)
+        if (target.tag == "Shirken")
         {
-            ropeCount++;
+            target.gameObject.GetComponent<CircleCollider2D>().isTrigger = enabled;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-
-
 }

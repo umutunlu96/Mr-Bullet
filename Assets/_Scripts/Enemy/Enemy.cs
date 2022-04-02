@@ -14,10 +14,16 @@ public class Enemy : MonoBehaviour
         FindObjectOfType<GameManager>().CheckEnemyCount();
 
         SoundManager.instance.PlaySoundFX(deathSound, .2f);
+
         foreach (Transform obj in transform)
         {
             obj.GetComponent<Rigidbody2D>().gravityScale = 5;
         }
+
+        transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+
+        //transform.GetChild(6).GetComponent<HingeJoint2D>().enabled = false;
+        //transform.GetChild(6).SetParent(null);
 
         isLiving = false;
     }
@@ -36,21 +42,32 @@ public class Enemy : MonoBehaviour
                 ForceMode2D.Impulse);
         }
 
-        if ((target.tag == "Plank" || target.tag == "BoxPlank") && isLiving)
+        if (target.tag == "Plank"  && isLiving)
         {
             //if (target.GetComponent<Rigidbody2D>().mass > 4f)
             Death();
         }
 
-        if (target.tag == "Tnt")
+        if (target.tag == "BoxPlank" && isLiving)
         {
             Death();
         }
+
+        //if (target.tag == "Tnt")
+        //{
+        //    Death();
+        //}
 
         if (target.tag == "Ground" && isLiving)
         {
             if (GetComponent<Rigidbody2D>().velocity.magnitude > .2f)
                 Death();
+        }
+
+        if (target.tag == "Enemy" && target.gameObject.GetComponent<Enemy>().isLiving && this.isLiving)
+        {
+            target.gameObject.GetComponent<Enemy>().Death();
+            Death();
         }
     }
 

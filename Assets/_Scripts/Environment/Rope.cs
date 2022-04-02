@@ -4,17 +4,33 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
-    public float gravityScale = 2;
+    private GameObject parent;
+    private void Start()
+    {
+        parent = transform.parent.gameObject;
+    }
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == "Bullet")
+        if (target.gameObject.tag == "Shirken")
         {
-            if (transform.childCount > 0)
+            transform.parent.GetComponent<DistanceJoint2D>().enabled = false;
+            //transform.GetComponent<HingeJoint2D>().enabled = false;
+
+            foreach (var component in GetComponents<HingeJoint2D>())
             {
-                transform.GetChild(0).transform.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
-                transform.GetChild(0).SetParent(null);
+                component.enabled = false;
             }
+
+            for (int i = 0; i < parent.transform.childCount; i++)
+            {
+                if (parent.transform.GetChild(i).tag != "Tnt")
+                {
+                    parent.transform.GetChild(i).GetComponent<Rigidbody2D>().mass = 50;
+                    parent.transform.GetChild(i).GetComponent<CapsuleCollider2D>().isTrigger = false;
+                }
+            }
+
         }
     }
 }
