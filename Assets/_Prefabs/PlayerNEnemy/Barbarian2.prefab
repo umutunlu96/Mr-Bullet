@@ -1073,8 +1073,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030365229, y: -0.31841314}
-  m_Size: {x: 0.53529024, y: 1.1290748}
+  m_Offset: {x: 0.030365232, y: -0.15000908}
+  m_Size: {x: 0.53529024, y: 1.4119928}
   m_Direction: 0
 --- !u!255 &7812626477647315490
 FixedJoint2D:

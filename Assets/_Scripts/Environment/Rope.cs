@@ -10,7 +10,7 @@ public class Rope : MonoBehaviour
         parent = transform.parent.gameObject;
     }
 
-    private void OnTriggerEnter2D(Collider2D target)
+    private void OnCollisionEnter2D(Collision2D target)
     {
         if (target.gameObject.tag == "Shirken")
         {
