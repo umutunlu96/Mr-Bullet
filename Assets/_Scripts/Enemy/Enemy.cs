@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour
 
         transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 
-        //transform.GetChild(6).GetComponent<HingeJoint2D>().enabled = false;
-        //transform.GetChild(6).SetParent(null);
+        transform.GetChild(6).GetComponent<HingeJoint2D>().enabled = false;
+        transform.GetChild(6).SetParent(null);
 
         isLiving = false;
     }

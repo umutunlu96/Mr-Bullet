@@ -394,8 +394,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0050120386, y: -0.111944124}
-  m_Size: {x: 0.145073, y: 0.25191137}
+  m_Offset: {x: -0.00501204, y: -0.092113085}
+  m_Size: {x: 0.14507298, y: 0.21224974}
   m_Direction: 0
 --- !u!233 &4144343482547268032
 HingeJoint2D:
@@ -848,6 +848,7 @@ GameObject:
   - component: {fileID: 4144343483285439514}
   - component: {fileID: 4144343483285439493}
   - component: {fileID: 4144343483285439492}
+  - component: {fileID: 942197443487908412}
   m_Layer: 8
   m_Name: bSword
   m_TagString: BodyPart
@@ -948,7 +949,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4144343483285439494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1006,6 +1007,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -20
     m_UpperAngle: 20
+--- !u!70 &942197443487908412
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144343483285439494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2251874, y: 0.20336217}
+  m_Size: {x: 0.3704609, y: 0.41283652}
+  m_Direction: 0
 --- !u!1 &4144343483855612488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,8 +1098,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030365229, y: -0.16374026}
-  m_Size: {x: 0.53529024, y: 1.3739191}
+  m_Offset: {x: 0.030365229, y: -0.1516429}
+  m_Size: {x: 0.53529024, y: 1.3497244}
   m_Direction: 0
 --- !u!255 &4144343483855612494
 FixedJoint2D:
@@ -1234,8 +1251,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025186062, y: -0.10644872}
-  m_Size: {x: 0.13646512, y: 0.25659284}
+  m_Offset: {x: 0.025186073, y: -0.08411129}
+  m_Size: {x: 0.13646513, y: 0.21197194}
   m_Direction: 0
 --- !u!233 &4144343483870824018
 HingeJoint2D:

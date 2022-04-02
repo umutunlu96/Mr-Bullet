@@ -228,5 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 4404015287562459144, guid: a36d4a7ae6804234e9610bb7878f71cd, type: 3}
+  explodeHit: {fileID: 8300000, guid: dcfc711c6558bcd46a673f0108d293e1, type: 3}
   radius: 2.25
   power: 5

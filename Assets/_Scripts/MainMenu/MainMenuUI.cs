@@ -11,6 +11,11 @@ public class MainMenuUI : MonoBehaviour
     public int maxLevel;
     private bool isEscape;
 
+    private void Start()
+    {
+        PlayerPrefs.SetInt("AdShowCount", 0);
+    }
+
     private void Update()
     {
         CloseApplication();

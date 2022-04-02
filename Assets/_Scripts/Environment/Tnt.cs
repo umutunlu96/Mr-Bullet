@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tnt : MonoBehaviour
 {
     public GameObject explosionPrefab;
+
+    public AudioClip explodeHit;
+
     public float radius = 1;
     public float power = 10;
 
@@ -13,6 +16,8 @@ public class Tnt : MonoBehaviour
     {
         Vector2 explosionPos = transform.position;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPos,radius);
+
+        SoundManager.instance.PlaySoundFX(explodeHit, .2f);
 
         foreach (Collider2D hit in colliders)
         {
