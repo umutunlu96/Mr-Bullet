@@ -316,7 +316,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.3999996
+  orthographic size: 7.7999997
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1596,7 +1596,7 @@ PrefabInstance:
       objectReference: {fileID: 1759557869021241359}
     - target: {fileID: 4706914138926346394, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevel
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 4706914139228506620, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1614,6 +1614,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 4706914140111919710, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31bd43fbc06dfbf46b116e5a60585d17, type: 3}
     - target: {fileID: 4706914140408741089, guid: 280e44a4db0bfcc418da46c0d5512fd6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
