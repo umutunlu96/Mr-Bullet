@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 1;
     [HideInInspector]
     public bool gameOver;
+    public bool gameWin;
     public int blackShirkens = 3;
     public int goldenShirkens = 1;
 
@@ -71,8 +72,15 @@ public class GameManager : MonoBehaviour
             gameOver = true;
             GameUI.instance.GameOverScreen();
 
-            ShowAd(adShow);
+            StartCoroutine(ShowAd(adShow, .7f));
             RewardRequest(rewardRequest);
+        }
+
+        if (gameWin && enemyCount <= 0 && GameObject.Find("WinScreen").activeInHierarchy)
+        {
+            gameWin = false;
+            print("Reklam");
+            StartCoroutine(ShowAd(adShow, .7f));
         }
 
         CloseApplication();
@@ -99,12 +107,14 @@ public class GameManager : MonoBehaviour
         if (enemyCount <= 0)
         {
             GameUI.instance.WinScreen();
+
+            gameWin = true;
+
             if (levelNumber == SceneManager.GetActiveScene().buildIndex)
             {
                 PlayerPrefs.SetInt("Level",levelNumber + 1);
             }
 
-            ShowAd(adShow);
         }
     }
 
@@ -122,8 +132,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ShowAd(bool adShow)
+    private IEnumerator ShowAd(bool adShow, float delatTime)
     {
+        yield return new WaitForSeconds(delatTime);
+
         if (adShow)
         {
             AdManager.instance.ShowIntertial();
