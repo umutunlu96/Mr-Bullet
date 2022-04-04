@@ -248,8 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxHit: {fileID: 8300000, guid: 1a77c0cebcf833744bd02d6e5867a6a2, type: 3}
   plankHit: {fileID: 8300000, guid: 1a77c0cebcf833744bd02d6e5867a6a2, type: 3}
-  groundHit: {fileID: 8300000, guid: 1a77c0cebcf833744bd02d6e5867a6a2, type: 3}
-  explodeHit: {fileID: 8300000, guid: dcfc711c6558bcd46a673f0108d293e1, type: 3}
+  groundHit: {fileID: 8300000, guid: a9f162532f7c1dd4cb3c079067459ddc, type: 3}
 --- !u!1 &3799987153395415986
 GameObject:
   m_ObjectHideFlags: 0
