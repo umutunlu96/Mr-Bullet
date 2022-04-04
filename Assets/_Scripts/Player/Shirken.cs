@@ -42,7 +42,7 @@ public class Shirken : MonoBehaviour
             Destroy(target.gameObject);
         }
 
-        if (target.gameObject.tag == "Plank")
+        if (target.gameObject.tag == "BoxPlank")
         {
             SoundManager.instance.PlaySoundFX(plankHit, .5f);
         }
