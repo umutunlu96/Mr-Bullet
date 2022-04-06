@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private bool isEscape;
 
     [Header("ADS")]
-    private bool SHOWADS = true;
+    private bool SHOWADS = false;
     public int adShowCount; //Ads
     public bool adShow; //Ads
     public bool rewardRequest;
